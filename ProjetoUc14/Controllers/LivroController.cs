@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using ProjetoUc14.Models;
 using ProjetoUc14.Repositories;
@@ -10,6 +11,8 @@ namespace ProjetoUc14.Controllers
     [Route("api/[controller]")]
 
     [ApiController]
+
+    [Authorize(Roles = "1")]
     public class LivroController : ControllerBase
     {
         private readonly LivroRepository _LivroRepository;
